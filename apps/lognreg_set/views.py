@@ -7,12 +7,12 @@ from django.contrib import messages
 # apps.secret_key = "keepitasecretbozo"
 
 def index(request):
-    print ("***** view.py file index function ****")
+    # print ("***** view.py file index function ****")
 
     return render(request, "loginreg_set/index.html")
 
 def register(request):
-    print ('*************** error function ************')
+    # print ('*************** error function ************')
     result = Reg.objects.Reg_validator(request.POST)
     if type(result) == list:
         for err in result:
@@ -26,7 +26,7 @@ def register(request):
     # return redirect('/'+id)
 
 def login(request):
-    print ("*********** login page   ***********")
+    # print ("*********** login page   ***********")
     result = Reg.objects.login_validator(request.POST)
     if type(result) == list:
         for item in result:
@@ -45,5 +45,5 @@ def success(request):
         'Reg': Reg.objects.get(id=request.session['Reg_id'])
 
     }
-    print ("***************** regobj ***********",Reg.objects)
+    # print ("***************** regobj ***********",Reg.objects)
     return render(request, 'loginsuccess_set/success.html', context)

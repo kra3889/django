@@ -16,7 +16,7 @@ def success(request):
         'Reg': Reg.objects.get(id=request.session['Reg_id'])
 
     }
-    print ("***************** regobj ***********",Reg.objects)
+    # print ("***************** regobj ***********",Reg.objects)
     return render(request, 'loginsuccess_set/success.html', context)
 
 

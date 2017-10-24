@@ -30,11 +30,11 @@ class RegManager(models.Manager):
         if post_data['password'] != post_data['passconf']:
             errors.append("passwords do not match")
 
-        print ("***********  errors", errors)
+        # print ("***********  errors", errors)
         if not errors:
             hash1 = bcrypt.hashpw(post_data['password'].encode(), bcrypt.gensalt())
             password = hash1
-            print (hash1)
+            # print (hash1)
             new_register = self.create(
                 first_name=post_data['first_name'],
                 last_name=post_data['last_name'],
